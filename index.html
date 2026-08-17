@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Like Informática - Seu Ponto de Tecnologia & Impressão</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* VARIABLES & RESET */
+    :root {
+      --bg-dark: #0a111e;
+      --bg-card: #131f33;
+      --primary-cyan: #00d2ff;
+      --primary-blue: #0052d4;
+      --text-main: #ffffff;
+      --text-sub: #a0aec0;
+      --accent-green: #25d366;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* HEADER / NAVBAR */
+    header {
+      background: rgba(10, 17, 30, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(0, 210, 255, 0.2);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-container img {
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-text span {
+      color: var(--primary-cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-cyan);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      text-align: center;
+      padding: 70px 20px 50px;
+      background: radial-gradient(circle at center, rgba(0, 210, 255, 0.15) 0%, rgba(10, 17, 30, 1) 70%);
+    }
+
+    .hero h1 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, #00d2ff, #0052d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-sub);
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(0, 210, 255, 0.1);
+      border: 1px solid rgba(0, 210, 255, 0.3);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: var(--primary-cyan);
+      font-weight: 600;
+    }
+
+    /* SECTIONS COMMON */
+    section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--primary-cyan);
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* GRID FOR PRODUCTS & SERVICES */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    /* CARDS */
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid rgba(0, 210, 255, 0.15);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--primary-cyan);
+      box-shadow: 0 10px 25px rgba(0, 210, 255, 0.15);
+    }
+
+    .card-img-container {
+      width: 100%;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .card:hover .card-img-container img {
+      transform: scale(1.05);
+    }
+
+    .card-icon-fallback {
+      font-size: 3.5rem;
+      color: var(--primary-cyan);
+    }
+
+    .card-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .card-desc {
+      color: var(--text-sub);
+      font-size: 0.92rem;
+      margin-bottom: 15px;
+      flex-grow: 1;
+    }
+
+    .price-tag {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-cyan);
+      margin-bottom: 15px;
+    }
+
+    .price-unit {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      font-weight: normal;
+    }
+
+    /* BUTTONS */
+    .btn-wsp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--accent-green);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: background-color 0.3s, transform 0.2s;
+      width: 100%;
+    }
+
+    .btn-wsp:hover {
+      background-color: #20bd5a;
+      transform: scale(1.02);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #060a12;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+      padding: 35px 20px;
+      color: var(--text-sub);
+      font-size: 0.95rem;
+      margin-top: 40px;
+    }
+
+    footer strong {
+      color: var(--primary-cyan);
+    }
+
+    .wsp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: var(--accent-green);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      z-index: 1000;
+      transition: transform 0.3s;
+      text-decoration: none;
+    }
+
+    .wsp-float:hover {
+      transform: scale(1.1);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.8rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo-container">
+        <!-- Logo file placeholder -->
+        <img src="logo.png" alt="Like Informática" onerror="this.style.display='none'">
+        <span class="logo-text">LIKE <span>INFORMÁTICA</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>SEU PONTO DE TECNOLOGIA & IMPRESSÃO</h1>
+    <p>Produtos de qualidade, acessórios, tintas e manutenção técnica rápida para computadores, impressoras e games!</p>
+    <div class="hero-badges">
+      <span class="badge"><i class="fa-solid fa-bolt"></i> Atendimento Rápido</span>
+      <span class="badge"><i class="fa-solid fa-shield-halved"></i> Garantia & Qualidade</span>
+      <span class="badge"><i class="fa-brands fa-whatsapp"></i> Pedidos Diretos no WhatsApp</span>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section id="produtos">
+    <h2 class="section-title">Catálogo de Produtos</h2>
+    <div class="grid" id="grid-produtos">
+      <!-- Carregado dinamicamente via produtos.json -->
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <h2 class="section-title">Nossos Serviços</h2>
+    <div class="grid" id="grid-servicos">
+      <!-- Carregado dinamicamente via dados -->
+    </div>
+  </section>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/5521990228518?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20e%20servi%C3%A7os%20da%20Like%20Inform%C3%A1tica." class="wsp-float" target="_blank" title="Falar no WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- FOOTER / CONTATO -->
+  <footer id="contato">
+    <p><strong>Like Informática</strong> - Soluções Rápidas e Eficazes</p>
+    <p><i class="fa-brands fa-whatsapp"></i> WhatsApp: (21) 99022-8518</p>
+    <p style="margin-top: 15px; font-size:0.85rem;">&copy; Like Informática. Confie no Like para energia segura e tecnologia de qualidade!</p>
+  </footer>
+
+  <!-- SCRIPT DE CARREGAMENTO DINÂMICO -->
+  <script>
+    const whatsappNumber = "5521990228518";
+
+    // Função para gerar o link do WhatsApp
+    function makeWspLink(itemTitle, itemPrice, type = "produto") {
+      let msg = "";
+      if (type === "produto") {
+        msg = `Olá! Vi no site e gostaria de comprar o produto: *${itemTitle}*` + (itemPrice ? ` (${itemPrice})` : '') + `. Está disponível?`;
+      } else {
+        msg = `Olá! Gostaria de mais informações / orçamento sobre o serviço: *${itemTitle}*.`;
+      }
+      return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
+    }
+
+    // Carrega os dados do arquivo produtos.json
+    async function loadCatalog() {
+      try {
+        const response = await fetch('produtos.json');
+        const data = await response.json();
+        
+        // Renderizar Produtos
+        const gridProdutos = document.getElementById('grid-produtos');
+        gridProdutos.innerHTML = '';
+        data.produtos.forEach(prod => {
+          const imgHTML = prod.imagem 
+            ? `<img src="${prod.imagem}" alt="${prod.nome}" onerror="this.parentElement.innerHTML='<i class=\'fa-solid fa-box-open card-icon-fallback\'></i>'">` 
+            : `<i class="${prod.icone || 'fa-solid fa-box-open'} card-icon-fallback"></i>`;
+
+          gridProdutos.innerHTML += `
+            <div class="card">
+              <div class="card-img-container">
+                ${imgHTML}
+              </div>
+              <div class="card-body">
+                <div>
+                  <h3 class="card-title">${prod.nome}</h3>
+                  <p class="card-desc">${prod.descricao}</p>
+                </div>
+                <div>
+                  <div class="price-tag">${prod.preco} <span class="price-unit">${prod.unidade || ''}</span></div>
+                  <a href="${makeWspLink(prod.nome, prod.preco, 'produto')}" target="_blank" class="btn-wsp">
+                    <i class="fa-brands fa-whatsapp"></i> Comprar no WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        // Renderizar Serviços
+        const gridServicos = document.getElementById('grid-servicos');
+        gridServicos.innerHTML = '';
+        data.servicos.forEach(serv => {
+          const imgHTML = serv.imagem 
+            ? `<img src="${serv.imagem}" alt="${serv.nome}">` 
+            : `<i class="${serv.icone || 'fa-solid fa-wrench'} card-icon-fallback"></i>`;
+
+          gridServicos.innerHTML += `
+            <div class="card">
+              <div class="card-img-container">
+                ${imgHTML}
+              </div>
+              <div class="card-body">
+                <div>
+                  <h3 class="card-title">${serv.nome}</h3>
+                  <p class="card-desc">${serv.descricao}</p>
+                </div>
+                <div>
+                  ${serv.preco ? `<div class="price-tag">${serv.preco}</div>` : ''}
+                  <a href="${makeWspLink(serv.nome, serv.preco, 'servico')}" target="_blank" class="btn-wsp">
+                    <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento
+                  </a>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+      } catch (err) {
+        console.error('Erro ao carregar catálogo:', err);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadCatalog);
+  </script>
+
+</body>
+</html>

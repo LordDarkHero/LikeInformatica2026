@@ -1,0 +1,92 @@
+{
+  "produtos": [
+    {
+      "id": "tinta-epson",
+      "nome": "Tintas Compatíveis para Epson",
+      "descricao": "L100, L200, L300, L400, L500 e linha Epson 664. Todas as cores (100ml).",
+      "preco": "R$ 10,00",
+      "unidade": "cada",
+      "imagem": "images/tintas-epson.jpg",
+      "icone": "fa-solid fa-print"
+    },
+    {
+      "id": "teclado-fay",
+      "nome": "Teclado Fay 60% Antighost RGB",
+      "descricao": "Tamanho compacto, confiável e preciso. Pronto para jogar ao máximo!",
+      "preco": "R$ 120,00",
+      "unidade": "",
+      "imagem": "images/teclado-fay.jpg",
+      "icone": "fa-solid fa-keyboard"
+    },
+    {
+      "id": "powerbank-kaidi",
+      "nome": "Powerbank Magnético Kaidi 20W",
+      "descricao": "5000mAh de capacidade, carregamento rápido de 20W. Compatível com Apple.",
+      "preco": "R$ 85,00",
+      "unidade": "",
+      "imagem": "images/powerbank-kaidi.jpg",
+      "icone": "fa-solid fa-charging-station"
+    },
+    {
+      "id": "mousepad-evolut",
+      "nome": "Mousepad Evolut",
+      "descricao": "Tecido anti-derrapante de alta qualidade. Controle preciso e confortável.",
+      "preco": "R$ 15,00",
+      "unidade": "",
+      "imagem": "images/mousepad-evolut.jpg",
+      "icone": "fa-solid fa-rug"
+    },
+    {
+      "id": "cabos-forca",
+      "nome": "Cabos de Força (ATX, Bipolar, Tripolar)",
+      "descricao": "Ótimo preço e qualidade. ATX (R$ 20), Bipolar (R$ 15), Tripolar Mickey (R$ 15).",
+      "preco": "R$ 15,00",
+      "unidade": "a R$ 20,00",
+      "imagem": "images/cabos-forca.jpg",
+      "icone": "fa-solid fa-plug"
+    },
+    {
+      "id": "cabo-typec-lightning",
+      "nome": "Cabo Tipo C x Lightning Kaidi (1m)",
+      "descricao": "Super carregamento, alta velocidade e revestimento de alta resistência (KD-105CL).",
+      "preco": "R$ 10,00",
+      "unidade": "",
+      "imagem": "images/cabo-kaidi.jpg",
+      "icone": "fa-solid fa-cable-data"
+    }
+  ],
+  "servicos": [
+    {
+      "id": "manutencao-pc",
+      "nome": "Manutenção de Computadores e Laptops",
+      "descricao": "Formatação, limpeza, upgrade, troca de peças e diagnósticos completos.",
+      "preco": "",
+      "imagem": "",
+      "icone": "fa-solid fa-laptop-code"
+    },
+    {
+      "id": "reparo-impressoras",
+      "nome": "Reparo em Impressoras e Monitores",
+      "descricao": "Assistência técnica e manutenção preventiva/corretiva rápida.",
+      "preco": "",
+      "imagem": "",
+      "icone": "fa-solid fa-print"
+    },
+    {
+      "id": "manutencao-videogames",
+      "nome": "Manutenção de Video Games & Controles",
+      "descricao": "Revisão e reparo de consoles novos, antigos e periféricos.",
+      "preco": "",
+      "imagem": "",
+      "icone": "fa-solid fa-gamepad"
+    },
+    {
+      "id": "impressao-xerox",
+      "nome": "Impressão de Documentos, Xerox & Papel Foto",
+      "descricao": "Impressão rápida de arquivos, boletos, cópias e fotos em alta qualidade.",
+      "preco": "",
+      "imagem": "",
+      "icone": "fa-solid fa-file-invoice"
+    }
+  ]
+}
